@@ -8,7 +8,7 @@ This layout is common for a Chocolatey package which works with an MSI installer
 
 ```mermaid
 graph LR;
-    root[Root Directory] --> tools[Tools Folder];
+    root[ msi-example] --> tools[Tools Folder];
     tools --> installfile[chocolateyInstall.ps1 - Used during choco install];
     tools --> uninstallfile[chocolateyUninstall.ps1 - Used during choco uninstall];
     tools --> upgradefile[chocolateyBeforeModify.ps1 - Used during choco upgrade/uninstall];
@@ -28,23 +28,25 @@ graph LR;
 
 ## Install script
 
-The `chocolateyInstall.ps1` script is executed by Chocolatey when a user runs the `choco install` command. This script contains all of the logic necessary to ensure that the installation of the MSI is completed successfully.
+The `chocolateyInstall.ps1` script is executed by Chocolatey when a user runs the `choco install` command. This script contains all of the logic necessary to ensure that the installation of the software via an MSI is completed successfully.
 
 For more information about `choco install` see the documentation for the [Chocolatey Install Command](https://docs.chocolatey.org/en-us/choco/commands/install/)
 
 ## Uninstall script
 
-The `chocolateyUninstall.ps1` script is executed by Chocolatey when a user runs the `choco uninstall` command. It is _typically optional to include_ as when using an MSI based installer, Chocolatey has a > 95% success rate at automatically removing the software when uninstalling the Chocolatey package via Chocolateys AutoUninstaller feature.
+The `chocolateyUninstall.ps1` script is executed by Chocolatey when a user runs the `choco uninstall` command. It is _typically optional to include_ as when using an MSI based installer, Chocolatey has a > 95% success rate at automatically removing the software when uninstalling the Chocolatey package via Chocolatey's AutoUninstaller feature.
 
 For more information about `choco uninstall` see the documentation for the [Chocolatey Uninstall Command](https://docs.chocolatey.org/en-us/choco/commands/uninstall/)
 
 ## Upgrade script
 
-The `chocolateyBeforeModify.ps1` script is executed by Chocolatey when a user runs either the `choco upgrade` or `choco uninstall` command. This is an optional script, but is extremely helpful when a piece of software may need to retain a file or a setting as the software is upgrade to the new version provided by the package. If applicable (meaning a chocolateyBeforeModify.ps1 file has been included), the version of this script from the currently installed package will be run before subsequent `chocolateyInstall.ps1` or `chocolateyUninstall.ps1` scripts.
+The `chocolateyBeforeModify.ps1` script is executed by Chocolatey when a user runs either the `choco upgrade` or `choco uninstall` command. This is an optional script, but is extremely helpful when a piece of software may need to retain a file or a setting as the software is upgraded to the new version provided by the package. If applicable (meaning a chocolateyBeforeModify.ps1 file has been included), the version of this script from the currently installed package version will be run before subsequent `chocolateyInstall.ps1` or `chocolateyUninstall.ps1` scripts execute.
 
 To give an example:
 
 When upgrading a package from version `1.0.0` to version `2.0.0`, the chocolateyBeforeModify.ps1 script of version `1.0.0` will be executed _before_ Chocolatey executes the chocolateyInstall.ps1 script of version `2.0.0`. This allows the chocolateyBeforeModify.ps1 script in version 2.0.0 to provide new instructions should subsequent upgrades past version `2.0.0` differ.
+
+For more information about `choco uninstall` see the documentation for the [Chocolatey Uninstall Command](https://docs.chocolatey.org/en-us/choco/commands/upgrade/)
 
 ## Automatic Package Updates
 
