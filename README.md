@@ -46,7 +46,7 @@ To give an example:
 
 When upgrading a package from version `1.0.0` to version `2.0.0`, the chocolateyBeforeModify.ps1 script of version `1.0.0` will be executed _before_ Chocolatey executes the chocolateyInstall.ps1 script of version `2.0.0`. This allows the chocolateyBeforeModify.ps1 script in version 2.0.0 to provide new instructions should subsequent upgrades past version `2.0.0` differ.
 
-For more information about `choco uninstall` see the documentation for the [Chocolatey Uninstall Command](https://docs.chocolatey.org/en-us/choco/commands/upgrade/)
+For more information about `choco uninstall` see the documentation for the [Chocolatey Upgrade Command](https://docs.chocolatey.org/en-us/choco/commands/upgrade/)
 
 ## Automatic Package Updates
 
