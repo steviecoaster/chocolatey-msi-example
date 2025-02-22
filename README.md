@@ -51,3 +51,11 @@ For more information about `choco uninstall` see the documentation for the [Choc
 ## Automatic Package Updates
 
 Using the `Chocolatey-AU` PowerShell module it is possible to automate the updating of a Chocolatey package as new versions of a piece of software (or whatever the package cares about) are released. This is done by providing an `update.ps1` file in the package folder, and using some form of Automation such as a CI/CD tool like GitHub Actions, or a Scheduled Task running locally on your workstation.
+
+## More help
+
+You can find a walk-through tutorial in the Chocolatey documentation. See [Create An Msi Package](https://docs.chocolatey.org/en-us/guides/create/create-msi-package/).
+
+You can find a pre-built Lab using AutomatedLab [here](https://github.com/steviecoaster/ChocoLabs/tree/main/Labs/Chocolatey) which has all the tools you need to author your first Chocolatey package if you just want an ephemeral approach to trying it out, or install them on your own workstation!
+
+Join the conversation on Chocolatey's discord! Join [here](https://ch0.co/community)!
