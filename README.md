@@ -34,7 +34,11 @@ Do note that by default a few extra files are created. These include:
 
 - README.md: This is similar to this README in that when checked into source control can provide information about what the package is/does to a consumer.
 - _TODO.txt: This file includes a bunch of instructions for things you may wish to do with the package.
-s
+
+> 📓*NOTE*: The PowerShell scripts contained in this repository have been modified to specifically suit handling the installation and uninstallation of a software via an MSI.
+> When running `choco new` you _will_ see a LOT of extra information in code comments in the PowerShell scripts.
+> These have been removed, and fit-for-purpose comments left in the PowerShell scripts found in this repository for, hopefully, clarity!
+
 ## Install script
 
 The `chocolateyInstall.ps1` script is executed by Chocolatey when a user runs the `choco install` command. This script contains all of the logic necessary to ensure that the installation of the software via an MSI is completed successfully.
