@@ -26,6 +26,15 @@ graph LR;
 
 ---
 
+## Generating the package
+
+The `choco new` command is used to scaffold a new package. I.e., to generate the folder structure found in this repository the command `choco new msi-example` was used.
+
+Do note that by default a few extra files are created. These include:
+
+- README.md: This is similar to this README in that when checked into source control can provide information about what the package is/does to a consumer.
+- _TODO.txt: This file includes a bunch of instructions for things you may wish to do with the package.
+s
 ## Install script
 
 The `chocolateyInstall.ps1` script is executed by Chocolatey when a user runs the `choco install` command. This script contains all of the logic necessary to ensure that the installation of the software via an MSI is completed successfully.
